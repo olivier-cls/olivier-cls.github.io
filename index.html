@@ -14,12 +14,36 @@
     content="olivier claisse portfolio"
   >
 
-  <title>olivier claisse | portfolio</title>
+  <title>olivier | portfolio</title>
 
   <link
     rel="stylesheet"
     href="styles.css"
   >
+
+  <script>
+    /*
+      set the theme before the page renders
+      to avoid a bright flash in dark mode
+    */
+
+    (() => {
+
+      const savedTheme =
+        localStorage.getItem("theme");
+
+      const systemDark =
+        window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+
+      document.documentElement.dataset.theme =
+        savedTheme ||
+        (systemDark ? "dark" : "light");
+
+    })();
+  </script>
+
 </head>
 
 
@@ -46,29 +70,101 @@
         class="brand"
         href="#home"
       >
-        olivier claisse.
+        olivier.
       </a>
 
 
-      <div class="nav-links">
+      <div class="nav-right">
 
-        <a href="#about">
-          about
-        </a>
 
-        <a href="#projects">
-          projects
-        </a>
+        <div class="nav-links">
 
-        <a href="#contact">
-          contact
-        </a>
+          <a href="#about">
+            about
+          </a>
+
+          <a href="#projects">
+            projects
+          </a>
+
+          <a href="#contact">
+            contact
+          </a>
+
+        </div>
+
+
+
+        <!-- light / dark mode button -->
+
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="switch color theme"
+        >
+
+
+          <!-- sun -->
+
+          <svg
+            class="theme-icon sun-icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <circle
+              cx="12"
+              cy="12"
+              r="3.5"
+            />
+
+            <path d="M12 2v2.2" />
+            <path d="M12 19.8V22" />
+
+            <path d="M4.93 4.93l1.56 1.56" />
+            <path d="M17.51 17.51l1.56 1.56" />
+
+            <path d="M2 12h2.2" />
+            <path d="M19.8 12H22" />
+
+            <path d="M4.93 19.07l1.56-1.56" />
+            <path d="M17.51 6.49l1.56-1.56" />
+
+          </svg>
+
+
+
+          <!-- moon -->
+
+          <svg
+            class="theme-icon moon-icon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <path
+              d="
+                M20.2 15.2
+                A8.5 8.5 0 0 1
+                8.8 3.8
+                A8.5 8.5 0 1 0
+                20.2 15.2
+              "
+            />
+
+          </svg>
+
+
+        </button>
+
 
       </div>
 
     </nav>
 
   </header>
+
 
 
 
@@ -87,6 +183,7 @@
 
       <div class="hero-copy">
 
+
         <span class="eyebrow">
           mechatronics · engineering · design
         </span>
@@ -97,9 +194,17 @@
           i build things where
 
           <span>
-            <strong>hardware</strong>
+
+            <strong>
+              hardware
+            </strong>
+
             meets
-            <strong>software.</strong>
+
+            <strong>
+              software.
+            </strong>
+
           </span>
 
         </h1>
@@ -108,13 +213,19 @@
         <p class="hero-text">
 
           mechatronics engineering student focused on
-          <strong>robotics</strong>,
+
+          <strong>
+            robotics
+          </strong>,
+
           embedded systems, electronics and minimal product design.
 
         </p>
 
 
+
         <div class="hero-actions">
+
 
           <a
             class="button button-primary"
@@ -131,15 +242,19 @@
             contact
           </a>
 
+
         </div>
 
+
       </div>
+
 
 
 
       <!-- hero visual -->
 
       <div class="hero-visual">
+
 
         <div class="device-card">
 
@@ -153,6 +268,7 @@
           </div>
 
 
+
           <div class="device-screen">
 
 
@@ -161,6 +277,7 @@
             <div class="code-line line-medium"></div>
 
             <div class="code-line line-short"></div>
+
 
 
 
@@ -181,6 +298,7 @@
 
 
 
+
               <div class="system-tile">
 
                 <span class="tile-label">
@@ -195,6 +313,7 @@
 
 
 
+
               <div class="system-tile">
 
                 <span class="tile-label">
@@ -206,6 +325,7 @@
                 </strong>
 
               </div>
+
 
 
 
@@ -224,14 +344,19 @@
 
             </div>
 
+
           </div>
 
+
         </div>
+
 
       </div>
 
 
     </section>
+
+
 
 
 
@@ -247,14 +372,20 @@
 
       <div class="section-heading">
 
+
         <span class="eyebrow">
           about
         </span>
 
 
         <h2>
+
           engineering with
-          <strong>restraint.</strong>
+
+          <strong>
+            restraint.
+          </strong>
+
         </h2>
 
 
@@ -265,7 +396,9 @@
 
         </p>
 
+
       </div>
+
 
 
 
@@ -276,12 +409,14 @@
 
         <article class="glass-card feature-card">
 
+
           <span class="card-number">
             01
           </span>
 
 
           <div class="feature-content">
+
 
             <h3>
               engineering
@@ -295,9 +430,13 @@
 
             </p>
 
+
           </div>
 
+
         </article>
+
+
 
 
 
@@ -305,12 +444,14 @@
 
         <article class="glass-card feature-card">
 
+
           <span class="card-number">
             02
           </span>
 
 
           <div class="feature-content">
+
 
             <h3>
               programming
@@ -324,9 +465,13 @@
 
             </p>
 
+
           </div>
 
+
         </article>
+
+
 
 
 
@@ -334,12 +479,14 @@
 
         <article class="glass-card feature-card">
 
+
           <span class="card-number">
             03
           </span>
 
 
           <div class="feature-content">
+
 
             <h3>
               design
@@ -353,7 +500,9 @@
 
             </p>
 
+
           </div>
+
 
         </article>
 
@@ -362,6 +511,9 @@
 
 
     </section>
+
+
+
 
 
 
@@ -377,14 +529,20 @@
 
       <div class="section-heading">
 
+
         <span class="eyebrow">
           projects
         </span>
 
 
         <h2>
+
           selected
-          <strong>work.</strong>
+
+          <strong>
+            work.
+          </strong>
+
         </h2>
 
 
@@ -395,7 +553,9 @@
 
         </p>
 
+
       </div>
+
 
 
 
@@ -409,7 +569,9 @@
           href="project-01.html"
         >
 
+
           <div class="project-top">
+
 
             <span class="project-number">
               01
@@ -420,10 +582,13 @@
               ↗
             </span>
 
+
           </div>
 
 
+
           <div class="project-content">
+
 
             <h3>
               project one
@@ -434,9 +599,13 @@
               project description
             </p>
 
+
           </div>
 
+
         </a>
+
+
 
 
 
@@ -447,7 +616,9 @@
           href="project-02.html"
         >
 
+
           <div class="project-top">
+
 
             <span class="project-number">
               02
@@ -458,10 +629,13 @@
               ↗
             </span>
 
+
           </div>
 
 
+
           <div class="project-content">
+
 
             <h3>
               project two
@@ -472,9 +646,13 @@
               project description
             </p>
 
+
           </div>
 
+
         </a>
+
+
 
 
 
@@ -485,7 +663,9 @@
           href="project-03.html"
         >
 
+
           <div class="project-top">
+
 
             <span class="project-number">
               03
@@ -496,10 +676,13 @@
               ↗
             </span>
 
+
           </div>
 
 
+
           <div class="project-content">
+
 
             <h3>
               project three
@@ -510,9 +693,13 @@
               project description
             </p>
 
+
           </div>
 
+
         </a>
+
+
 
 
 
@@ -523,7 +710,9 @@
           href="project-04.html"
         >
 
+
           <div class="project-top">
+
 
             <span class="project-number">
               04
@@ -534,10 +723,13 @@
               ↗
             </span>
 
+
           </div>
 
 
+
           <div class="project-content">
+
 
             <h3>
               project four
@@ -548,9 +740,13 @@
               project description
             </p>
 
+
           </div>
 
+
         </a>
+
+
 
 
 
@@ -561,7 +757,9 @@
           href="project-05.html"
         >
 
+
           <div class="project-top">
+
 
             <span class="project-number">
               05
@@ -572,10 +770,13 @@
               ↗
             </span>
 
+
           </div>
 
 
+
           <div class="project-content">
+
 
             <h3>
               project five
@@ -586,9 +787,13 @@
               project description
             </p>
 
+
           </div>
 
+
         </a>
+
+
 
 
 
@@ -599,7 +804,9 @@
           href="project-06.html"
         >
 
+
           <div class="project-top">
+
 
             <span class="project-number">
               06
@@ -610,10 +817,13 @@
               ↗
             </span>
 
+
           </div>
 
 
+
           <div class="project-content">
+
 
             <h3>
               project six
@@ -624,7 +834,9 @@
               project description
             </p>
 
+
           </div>
+
 
         </a>
 
@@ -636,72 +848,135 @@
 
 
 
+
+
+
     <!-- ======================================
-     contact
-======================================= -->
+         contact
+    ======================================= -->
 
-<section
-  class="section container"
-  id="contact"
->
-
-  <div class="contact-card">
-
-    <span class="eyebrow">
-      contact
-    </span>
-
-    <h2>
-      have something worth
-      <strong>building?</strong>
-    </h2>
-
-    <p>
-      choose what you would like to talk about.
-    </p>
-
-    <div class="contact-buttons">
-
-      <a
-        class="contact-button"
-        href="mailto:olivierclaisse@protonmail.com?subject=internship"
-      >
-        internship
-        <span>↗</span>
-      </a>
-
-      <a
-        class="contact-button"
-        href="mailto:olivierclaisse@protonmail.com?subject=collaboration"
-      >
-        collaboration
-        <span>↗</span>
-      </a>
-
-      <a
-        class="contact-button"
-        href="mailto:olivierclaisse@protonmail.com?subject=consulting"
-      >
-        consulting
-        <span>↗</span>
-      </a>
-
-    </div>
-
-    <a
-      class="contact-email"
-      href="mailto:olivierclaisse@protonmail.com"
+    <section
+      class="section container"
+      id="contact"
     >
-      olivierclaisse@protonmail.com
-    </a>
 
-  </div>
 
-</section>
+      <div class="contact-card">
+
+
+        <span class="eyebrow">
+          contact
+        </span>
+
+
+        <h2>
+
+          have something worth
+
+          <strong>
+            building?
+          </strong>
+
+        </h2>
+
+
+        <p>
+
+          choose what you would like to talk about.
+
+        </p>
+
+
+
+
+        <!-- separate contact buttons -->
+
+        <div class="contact-buttons">
+
+
+          <a
+            class="contact-button"
+            href="mailto:olivierclaisse@protonmail.com?subject=internship"
+          >
+
+            internship
+
+            <span>
+              ↗
+            </span>
+
+          </a>
+
+
+
+
+          <a
+            class="contact-button"
+            href="mailto:olivierclaisse@protonmail.com?subject=collaboration"
+          >
+
+            collaboration
+
+            <span>
+              ↗
+            </span>
+
+          </a>
+
+
+
+
+          <a
+            class="contact-button"
+            href="mailto:olivierclaisse@protonmail.com?subject=consulting"
+          >
+
+            consulting
+
+            <span>
+              ↗
+            </span>
+
+          </a>
+
+
+        </div>
+
+
+
+
+        <a
+          class="contact-email"
+          href="mailto:olivierclaisse@protonmail.com"
+        >
+
+          olivierclaisse@protonmail.com
+
+        </a>
+
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+
+
+
+
+  <!-- ======================================
+       footer
+  ======================================= -->
+
   <footer class="footer container">
 
+
     <span>
-      © 2026 olivier claisse
+      © 2026 olivier
     </span>
 
 
@@ -709,7 +984,62 @@
       back to top ↑
     </a>
 
+
   </footer>
+
+
+
+
+
+  <!-- ======================================
+       light / dark mode
+  ======================================= -->
+
+  <script>
+
+
+    const themeToggle =
+      document.getElementById(
+        "theme-toggle"
+      );
+
+
+    const root =
+      document.documentElement;
+
+
+
+
+    themeToggle.addEventListener(
+      "click",
+      () => {
+
+
+        const currentTheme =
+          root.dataset.theme;
+
+
+        const newTheme =
+          currentTheme === "dark"
+            ? "light"
+            : "dark";
+
+
+        root.dataset.theme =
+          newTheme;
+
+
+        localStorage.setItem(
+          "theme",
+          newTheme
+        );
+
+
+      }
+    );
+
+
+  </script>
 
 
 </body>
