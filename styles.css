@@ -1535,20 +1535,18 @@ strong {
 
 
 
-/* contact options */
+/* =========================================
+   separate contact buttons
+========================================= */
 
-.contact-options {
+.contact-buttons {
 
   display:
-    grid;
+    flex;
 
 
-  grid-template-columns:
-
-    repeat(
-      3,
-      minmax(0, 1fr)
-    );
+  flex-wrap:
+    wrap;
 
 
   gap:
@@ -1556,156 +1554,84 @@ strong {
 
 
   margin-top:
-    38px;
+    34px;
 
 }
 
 
 
-.contact-option {
+.contact-button {
 
   min-height:
-    150px;
+    48px;
 
 
   display:
-    grid;
+    inline-flex;
 
 
-  grid-template-columns:
-    1fr auto;
+  align-items:
+    center;
 
 
-  align-content:
-    space-between;
+  justify-content:
+    center;
 
 
   gap:
-    18px;
+    10px;
 
 
   padding:
-    20px;
+    0 20px;
 
 
   border:
 
     1px solid
-    rgba(255, 255, 255, 0.11);
+    rgba(255, 255, 255, 0.14);
 
 
   border-radius:
-    22px;
+    999px;
 
-
-  background:
-    rgba(255, 255, 255, 0.055);
-
-
-  transition:
-
-    transform 220ms ease,
-    background 220ms ease,
-    border-color 220ms ease;
-
-}
-
-
-
-.contact-option:hover {
-
-  transform:
-    translateY(-4px);
-
-
-  border-color:
-    rgba(255, 255, 255, 0.20);
-
-
-  background:
-    rgba(255, 255, 255, 0.09);
-
-}
-
-
-
-.contact-number {
-
-  grid-column:
-    1 / -1;
-
-
-  color:
-    rgba(255, 255, 255, 0.40);
-
-
-  font-size:
-    0.65rem;
-
-}
-
-
-
-.contact-option-text {
-
-  display:
-    flex;
-
-
-  flex-direction:
-    column;
-
-
-  align-self:
-    end;
-
-
-  gap:
-    4px;
-
-}
-
-
-
-.contact-option-text strong {
 
   color:
     #ffffff;
 
 
+  background:
+    rgba(255, 255, 255, 0.07);
+
+
   font-size:
-    1rem;
+    0.88rem;
 
 
   font-weight:
-    620;
+    600;
+
+
+  backdrop-filter:
+    blur(16px);
+
+
+  -webkit-backdrop-filter:
+    blur(16px);
+
+
+  transition:
+
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 
 }
 
 
 
-.contact-option-text small {
-
-  color:
-    rgba(255, 255, 255, 0.50);
-
-
-  font-size:
-    0.70rem;
-
-
-  line-height:
-    1.4;
-
-}
-
-
-
-.contact-arrow {
-
-  align-self:
-    end;
-
+.contact-button span {
 
   color:
     rgba(255, 255, 255, 0.55);
@@ -1718,8 +1644,30 @@ strong {
 
 
 
-.contact-option:hover
-.contact-arrow {
+.contact-button:hover {
+
+  transform:
+    translateY(-2px);
+
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+
+  border-color:
+    rgba(255, 255, 255, 0.24);
+
+
+  box-shadow:
+
+    0 10px 28px
+    rgba(0, 0, 0, 0.18);
+
+}
+
+
+
+.contact-button:hover span {
 
   transform:
     translate(3px, -3px);
@@ -1757,7 +1705,9 @@ strong {
 
 
   transition:
-    color 180ms ease;
+
+    color 180ms ease,
+    border-color 180ms ease;
 
 }
 
@@ -1767,6 +1717,10 @@ strong {
 
   color:
     #ffffff;
+
+
+  border-color:
+    rgba(255, 255, 255, 0.50);
 
 }
 
@@ -1890,19 +1844,10 @@ strong {
 
 
 
-  .contact-options {
+  .contact-buttons {
 
-    grid-template-columns:
-      1fr;
-
-  }
-
-
-
-  .contact-option {
-
-    min-height:
-      110px;
+    gap:
+      10px;
 
   }
 
@@ -2119,7 +2064,15 @@ strong {
 
 
 
-  .contact-options {
+  .contact-buttons {
+
+    align-items:
+      stretch;
+
+
+    flex-direction:
+      column;
+
 
     margin-top:
       30px;
@@ -2128,18 +2081,18 @@ strong {
 
 
 
-  .contact-option {
+  .contact-button {
 
-    min-height:
-      100px;
+    width:
+      100%;
+
+
+    justify-content:
+      space-between;
 
 
     padding:
-      17px;
-
-
-    border-radius:
-      18px;
+      0 18px;
 
   }
 
