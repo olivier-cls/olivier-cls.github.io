@@ -216,15 +216,38 @@
 
           <div class="device-screen">
 
-            <div class="code-line line-wide"></div>
-            <div class="code-line line-medium"></div>
-            <div class="code-line line-short"></div>
+            <div class="screen-glow"></div>
+
+            <div class="screen-head">
+              <div class="screen-label">
+                signal architecture
+              </div>
+
+              <div class="screen-chip">
+                prototype
+              </div>
+            </div>
+
+
+            <div class="code-stack">
+              <div class="code-line line-wide"></div>
+              <div class="code-line line-medium"></div>
+              <div class="code-line line-short"></div>
+            </div>
+
+
+            <div class="signal-orbit">
+              <div class="orbit-ring orbit-ring-one"></div>
+              <div class="orbit-ring orbit-ring-two"></div>
+              <div class="orbit-dot orbit-dot-one"></div>
+              <div class="orbit-dot orbit-dot-two"></div>
+              <div class="orbit-core"></div>
+            </div>
 
 
             <div class="system-grid">
 
               <div class="system-tile">
-
                 <span class="tile-label">
                   control
                 </span>
@@ -233,11 +256,13 @@
                   pid
                 </strong>
 
+                <span class="tile-meta">
+                  tuned loop
+                </span>
               </div>
 
 
               <div class="system-tile">
-
                 <span class="tile-label">
                   logic
                 </span>
@@ -246,11 +271,13 @@
                   python
                 </strong>
 
+                <span class="tile-meta">
+                  automation
+                </span>
               </div>
 
 
               <div class="system-tile">
-
                 <span class="tile-label">
                   hardware
                 </span>
@@ -259,11 +286,13 @@
                   mcu
                 </strong>
 
+                <span class="tile-meta">
+                  embedded node
+                </span>
               </div>
 
 
               <div class="system-tile accent-tile">
-
                 <span class="tile-label">
                   status
                 </span>
@@ -272,6 +301,10 @@
                   online
                 </strong>
 
+                <span class="tile-meta tile-meta-live">
+                  <span class="live-dot"></span>
+                  system live
+                </span>
               </div>
 
             </div>
@@ -825,7 +858,6 @@
 
 
   <script>
-
     const themeToggle =
       document.getElementById(
         "theme-toggle"
@@ -834,11 +866,9 @@
     const root =
       document.documentElement;
 
-
     themeToggle.addEventListener(
       "click",
       () => {
-
         const currentTheme =
           root.dataset.theme;
 
@@ -854,10 +884,8 @@
           "theme",
           newTheme
         );
-
       }
     );
-
   </script>
 
 
